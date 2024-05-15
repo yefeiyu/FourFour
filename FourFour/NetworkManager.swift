@@ -4,23 +4,6 @@
 //
 //  Created by Charles Thomas on 2024/5/8.
 //
-//import Foundation
-//
-//class NetworkManager {
-//    func fetchData(from url: URL) async throws -> String {
-//        let (data, _) = try await URLSession.shared.data(from: url)
-//        let gbkEncoding = CFStringEncodings.GB_18030_2000.rawValue
-//        let cfEncoding = CFStringEncoding(gbkEncoding)
-//        let encoding = String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(cfEncoding))
-//        
-//        guard let htmlString = String(data: data, encoding: encoding) else {
-//            throw NSError(domain: "EncodingError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to decode data with GBK encoding"])
-//        }
-//        
-//        return htmlString
-//    }
-////}
-///下面是错误不能登录。
 import Foundation
 
 class NetworkManager {
@@ -62,5 +45,20 @@ class NetworkManager {
         }
 
         return true  // 假设返回状态码200意味着登录成功
+    }
+    func fetchPostContent(from url: URL) async throws -> String {
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        // 指定GBK编码
+        let gbkEncoding = CFStringEncodings.GB_18030_2000.rawValue
+        let cfEncoding = CFStringEncoding(gbkEncoding)
+        let encoding = String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(cfEncoding))
+        
+        // 尝试使用GBK编码解码数据
+        guard let htmlString = String(data: data, encoding: encoding) else {
+            throw NSError(domain: "EncodingError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to decode data with GBK encoding"])
+        }
+        
+        return htmlString
     }
 }

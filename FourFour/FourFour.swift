@@ -11,7 +11,8 @@ import SwiftUI
 struct FourFourApp: App {
     var body: some Scene {
         WindowGroup {
-            ForumListView()
+//            ForumListView()
+            LoginPageView()
         }
     }
 }

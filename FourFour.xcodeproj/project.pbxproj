@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F558F6DA2BF3B48400B1A9E7 /* PostAndReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558F6D92BF3B48400B1A9E7 /* PostAndReplyView.swift */; };
+		F558F6DC2BF3BACD00B1A9E7 /* PostHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558F6DB2BF3BACD00B1A9E7 /* PostHTMLParser.swift */; };
 		F5EEFA452BF375ED004B457F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EEFA442BF375ED004B457F /* Assets.xcassets */; };
 		F5EEFA482BF375ED004B457F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EEFA472BF375ED004B457F /* Preview Assets.xcassets */; };
 		F5EEFA5E2BF37662004B457F /* ForumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA502BF37662004B457F /* ForumListView.swift */; };
 		F5EEFA5F2BF37662004B457F /* GenericPostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA512BF37662004B457F /* GenericPostListView.swift */; };
-		F5EEFA602BF37662004B457F /* ForumPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA522BF37662004B457F /* ForumPost.swift */; };
 		F5EEFA612BF37662004B457F /* ForumPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA532BF37662004B457F /* ForumPage2.swift */; };
 		F5EEFA622BF37662004B457F /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA542BF37662004B457F /* HTMLParser.swift */; };
 		F5EEFA632BF37662004B457F /* ForumURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA552BF37662004B457F /* ForumURLs.swift */; };
@@ -24,12 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F558F6D92BF3B48400B1A9E7 /* PostAndReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAndReplyView.swift; sourceTree = "<group>"; };
+		F558F6DB2BF3BACD00B1A9E7 /* PostHTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHTMLParser.swift; sourceTree = "<group>"; };
 		F5EEFA3D2BF375EC004B457F /* FourFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EEFA442BF375ED004B457F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5EEFA472BF375ED004B457F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5EEFA502BF37662004B457F /* ForumListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumListView.swift; sourceTree = "<group>"; };
 		F5EEFA512BF37662004B457F /* GenericPostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericPostListView.swift; sourceTree = "<group>"; };
-		F5EEFA522BF37662004B457F /* ForumPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumPost.swift; sourceTree = "<group>"; };
 		F5EEFA532BF37662004B457F /* ForumPage2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumPage2.swift; sourceTree = "<group>"; };
 		F5EEFA542BF37662004B457F /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		F5EEFA552BF37662004B457F /* ForumURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForumURLs.swift; path = FourFour/ForumURLs.swift; sourceTree = SOURCE_ROOT; };
@@ -95,10 +97,9 @@
 		F5EEFA4F2BF37662004B457F /* ThreadList */ = {
 			isa = PBXGroup;
 			children = (
-				F5EEFA522BF37662004B457F /* ForumPost.swift */,
+				F5EEFA542BF37662004B457F /* HTMLParser.swift */,
 				F5EEFA512BF37662004B457F /* GenericPostListView.swift */,
 				F5EEFA532BF37662004B457F /* ForumPage2.swift */,
-				F5EEFA542BF37662004B457F /* HTMLParser.swift */,
 				F5EEFA502BF37662004B457F /* ForumListView.swift */,
 			);
 			name = ThreadList;
@@ -118,6 +119,8 @@
 		F5EEFA5A2BF37662004B457F /* PostContent */ = {
 			isa = PBXGroup;
 			children = (
+				F558F6DB2BF3BACD00B1A9E7 /* PostHTMLParser.swift */,
+				F558F6D92BF3B48400B1A9E7 /* PostAndReplyView.swift */,
 			);
 			name = PostContent;
 			path = FourFour/PostContent;
@@ -202,9 +205,10 @@
 				F5EEFA642BF37662004B457F /* NetworkManager.swift in Sources */,
 				F5EEFA632BF37662004B457F /* ForumURLs.swift in Sources */,
 				F5EEFA612BF37662004B457F /* ForumPage2.swift in Sources */,
-				F5EEFA602BF37662004B457F /* ForumPost.swift in Sources */,
 				F5EEFA652BF37662004B457F /* parseLoginPage.swift in Sources */,
+				F558F6DC2BF3BACD00B1A9E7 /* PostHTMLParser.swift in Sources */,
 				F5EEFA622BF37662004B457F /* HTMLParser.swift in Sources */,
+				F558F6DA2BF3B48400B1A9E7 /* PostAndReplyView.swift in Sources */,
 				F5EEFA662BF37662004B457F /* LoginPageView.swift in Sources */,
 				F5EEFA5F2BF37662004B457F /* GenericPostListView.swift in Sources */,
 				F5EEFA672BF37662004B457F /* WebScraperViewModel.swift in Sources */,
