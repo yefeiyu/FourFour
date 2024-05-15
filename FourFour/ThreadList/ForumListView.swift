@@ -11,8 +11,15 @@ struct ForumListView: View {
     
     var body: some View {
         NavigationView {
-            List(scraperViewModel.posts, id: \.self) { post in
+            List {
+            ForEach(scraperViewModel.posts, id: \.self) { post in
+                ZStack {
                 NavigationLink(destination: PostAndReplyView(postURL: post.url)) {
+                    EmptyView()
+                                           }
+                                           .buttonStyle(PlainButtonStyle())
+                                           .opacity(0) // 隐藏箭头
+
                     VStack(alignment: .leading, spacing: 2) {
                         HStack {
                             Text(post.author)
@@ -68,14 +75,18 @@ struct ForumListView: View {
                         }
                     }
                 }
+                                    .listRowInsets(EdgeInsets()) // 去除默认的行内边距
+                }
             }
-            .navigationTitle("Forum Posts")
+            .padding()
+            .listStyle(PlainListStyle()) // 去除灰色背景条
             .onAppear {
                 Task {
                     await scraperViewModel.loadPosts(for: 2)
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

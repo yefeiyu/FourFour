@@ -40,26 +40,34 @@ class PostHTMLParser {
             let postCount = Int(try postElement.select("dl.profile dt:contains(帖子) + dd").text().trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0
             let score = Int(try postElement.select("dl.profile dt:contains(积分) + dd").text().trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0
             let postDate = try postElement.select("em[id^=authorposton]").text().replacingOccurrences(of: "发表于 ", with: "")
-            let postNumber = try postElement.select("a[id^=postnum]").attr("id").replacingOccurrences(of: "postnum", with: "")
-            let postContent = try postElement.select("td.t_msgfont").text()
+            let postNumber = try postElement.select("strong a[id^=postnum] em").text()
 
             let onlySeeAuthorLink = try postElement.select("div.authorinfo a").attr("href")
-            let reportLink = try postElement.select("a[href*=misc.php?action=report]").attr("href")
-            let replyLink = try postElement.select("a.fastreply").attr("href")
-            let quoteLink = try postElement.select("a.repquote").attr("href")
-            let topLink = try postElement.select("a[href*=scrollTo]").attr("href")
+            let reportLink = try postElement.select("div.postactions a[href*=misc.php?action=report]").attr("href")
+            let replyLink = try postElement.select("div.postactions a.fastreply").attr("href")
+            let quoteLink = try postElement.select("div.postactions a.repquote").attr("href")
+            let topLink = try postElement.select("div.postactions a[href*=scrollTo]").attr("href")
             
-            // Parse quote if exists
+            var postContent = ""
             var quoteAuthor: String? = nil
             var quoteDate: String? = nil
             var quoteContent: String? = nil
             var quoteLinkContent: String? = nil
-
-            if let quoteElement = try postElement.select("div.quote blockquote").first() {
-                quoteContent = try quoteElement.text()
-                quoteAuthor = try quoteElement.select("font[color='#999999']").first()?.text().components(separatedBy: " 发表于 ").first
-                quoteDate = try quoteElement.select("font[color='#999999']").first()?.text().components(separatedBy: " 发表于 ").last
-                quoteLinkContent = try quoteElement.select("a").attr("href")
+            
+            if let postContentElement = try postElement.select("td.t_msgfont").first() {
+                // Parse quote if exists
+                if let quoteElement = try postContentElement.select("div.quote blockquote").first() {
+                    quoteContent = try quoteElement.text()
+                    quoteAuthor = try quoteElement.select("font[color='#999999']").first()?.text().components(separatedBy: " 发表于 ").first
+                    quoteDate = try quoteElement.select("font[color='#999999']").first()?.text().components(separatedBy: " 发表于 ").last
+                    quoteLinkContent = try quoteElement.select("a").attr("href")
+                    
+                    // Remove quote element after parsing
+                    try postContentElement.select("div.quote").remove()
+                }
+                
+                // Extract post content without quote
+                postContent = try postContentElement.text()
             }
 
             let postDetail = ForumPostDetail(
