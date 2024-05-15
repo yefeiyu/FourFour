@@ -14,12 +14,17 @@ struct ForumPostDetail: Identifiable, Hashable {
     var postCount: Int
     var score: Int
     var postDate: String
-    var postNumber: String
+    var postNumber: String?
     var postContent: String
     var quoteAuthor: String?
     var quoteDate: String?
     var quoteContent: String?
     var quoteLinkContent: String?
+    var onlySeeAuthorLink: String?
+    var reportLink: String?
+    var replyLink: String?
+    var quoteLink: String?
+    var topLink: String?
 }
 
 class PostHTMLParser {
@@ -38,6 +43,12 @@ class PostHTMLParser {
             let postNumber = try postElement.select("a[id^=postnum]").attr("id").replacingOccurrences(of: "postnum", with: "")
             let postContent = try postElement.select("td.t_msgfont").text()
 
+            let onlySeeAuthorLink = try postElement.select("div.authorinfo a").attr("href")
+            let reportLink = try postElement.select("a[href*=misc.php?action=report]").attr("href")
+            let replyLink = try postElement.select("a.fastreply").attr("href")
+            let quoteLink = try postElement.select("a.repquote").attr("href")
+            let topLink = try postElement.select("a[href*=scrollTo]").attr("href")
+            
             // Parse quote if exists
             var quoteAuthor: String? = nil
             var quoteDate: String? = nil
@@ -62,7 +73,12 @@ class PostHTMLParser {
                 quoteAuthor: quoteAuthor,
                 quoteDate: quoteDate,
                 quoteContent: quoteContent,
-                quoteLinkContent: quoteLinkContent
+                quoteLinkContent: quoteLinkContent,
+                onlySeeAuthorLink: onlySeeAuthorLink,
+                reportLink: reportLink,
+                replyLink: replyLink,
+                quoteLink: quoteLink,
+                topLink: topLink
             )
             
             postDetails.append(postDetail)

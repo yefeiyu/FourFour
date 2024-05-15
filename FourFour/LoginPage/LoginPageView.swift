@@ -58,7 +58,7 @@ struct LoginPageView: View {
                     }
                 }
             }
-            .navigationTitle(Text("4DAY 4YEAR").foregroundColor(Color.purple).font(.title))
+            .navigationTitle(Text("4DAY 4YEAR").foregroundColor(Color.green).font(.title))
             .background(NavigationLink("", destination: ForumListView(), isActive: $isAuthenticated))
         }
         .onAppear {

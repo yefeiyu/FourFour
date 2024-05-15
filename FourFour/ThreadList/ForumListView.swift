@@ -66,7 +66,6 @@ struct ForumListView: View {
                                 }
                             }
                         }
-
                     }
                 }
             }

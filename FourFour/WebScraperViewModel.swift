@@ -24,7 +24,7 @@ class WebScraperViewModel: ObservableObject {
     }
     
     func loadPostDetails(for postURL: String) async {
-        let fullURLString = "https://www.4d4y.com/forum/\(postURL)"
+        let fullURLString = "\(ForumURLs.baseURL)\(postURL)"
         guard let url = URL(string: fullURLString) else {
             print("Invalid URL: \(fullURLString)")
             return
