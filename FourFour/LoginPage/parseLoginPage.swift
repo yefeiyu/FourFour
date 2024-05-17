@@ -4,6 +4,7 @@
 //
 //  Created by Charles Thomas on 2024/5/8.
 //
+
 import SwiftSoup
 
 func parseLoginPage(html: String) throws -> (usernamePlaceholder: String?, passwordLabel: String?, securityQuestions: [(value: String, text: String)], securityAnswerStyle: String?, loginButtonText: String?, rememberMeChecked: Bool, rememberMeLabel: String) {

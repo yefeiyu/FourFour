@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct ForumPage2: View {
-    @StateObject private var scraperViewModel = WebScraperViewModel()
+    @StateObject private var scraperViewModel = ThreadScraperViewModel()
 
     var body: some View {
         GenericPostListView(scraperViewModel: scraperViewModel)

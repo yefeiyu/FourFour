@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  FourDay
+//  LoginPageView.swift
+//  FourOne
 //
-//  Created by Charles Thomas on 2024/5/8.
+//  Created by Charles Thomas on 2024/5/17.
+//
 
 import SwiftUI
 import SwiftSoup
@@ -26,7 +27,8 @@ struct LoginPageView: View {
     @State private var rememberMeChecked: Bool = false
     @State private var rememberMeLabel: String = "Remember Me"
     @State private var loginError: String?
-    var networkManager = NetworkManager()
+    var loginNetworkManager = LoginNetworkManager()
+    var dataNetworkManager = DataNetworkManager()
 
     var body: some View {
         NavigationView {
@@ -59,6 +61,7 @@ struct LoginPageView: View {
                 }
             }
             .navigationTitle(Text("4DAY 4YEAR").foregroundColor(Color.green).font(.title))
+            //下面的说只适合iOS16
             .background(NavigationLink("", destination: ForumListView(), isActive: $isAuthenticated))
         }
         .onAppear {
@@ -75,7 +78,7 @@ struct LoginPageView: View {
         let loginData = "action=login&loginsubmit=yes&inajax=1&formhash=67709ebe&referer=https%3A%2F%2Fwww.4d4y.com%2Fforum%2Findex.php&loginfield=username&username=\(username)&password=\(hashedPassword)&questionid=0&answer="
 
         do {
-                let isSuccess = try await networkManager.login(url: url, loginData: loginData)
+                let isSuccess = try await loginNetworkManager.login(url: url, loginData: loginData)
                 isAuthenticated = isSuccess
                 if !isSuccess {
                     loginError = "Invalid username or password"
@@ -89,7 +92,7 @@ struct LoginPageView: View {
     func loadLoginPage() async {
         guard let url = ForumURLs.loginPage() else { return }
         do {
-            let html = try await networkManager.fetchData(from: url)
+            let html = try await dataNetworkManager.fetchData(from: url)
             let parsedData = try parseLoginPage(html: html)
             DispatchQueue.main.async {
                 updateUI(with: parsedData)

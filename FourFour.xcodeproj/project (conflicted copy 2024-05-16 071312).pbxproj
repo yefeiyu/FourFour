@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F50AA1432BF625E900B70437 /* QuoteClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50AA1422BF625E900B70437 /* QuoteClip.swift */; };
-		F5322AA82BF7B98C00A02D2A /* StringEncodingGBK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5322AA72BF7B98C00A02D2A /* StringEncodingGBK.swift */; };
-		F5322AAA2BF7B9CC00A02D2A /* DataNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5322AA92BF7B9CC00A02D2A /* DataNetWorkManager.swift */; };
-		F5322AAC2BF7B9FA00A02D2A /* ThreadScraperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5322AAB2BF7B9FA00A02D2A /* ThreadScraperViewModel.swift */; };
-		F5322AAE2BF7BA8000A02D2A /* PostScraperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5322AAD2BF7BA8000A02D2A /* PostScraperViewModel.swift */; };
 		F558F6DA2BF3B48400B1A9E7 /* PostAndReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558F6D92BF3B48400B1A9E7 /* PostAndReplyView.swift */; };
 		F558F6DC2BF3BACD00B1A9E7 /* PostHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558F6DB2BF3BACD00B1A9E7 /* PostHTMLParser.swift */; };
 		F5EEFA452BF375ED004B457F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EEFA442BF375ED004B457F /* Assets.xcassets */; };
@@ -21,19 +16,15 @@
 		F5EEFA612BF37662004B457F /* ForumPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA532BF37662004B457F /* ForumPage2.swift */; };
 		F5EEFA622BF37662004B457F /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA542BF37662004B457F /* HTMLParser.swift */; };
 		F5EEFA632BF37662004B457F /* ForumURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA552BF37662004B457F /* ForumURLs.swift */; };
-		F5EEFA642BF37662004B457F /* LoginNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA562BF37662004B457F /* LoginNetworkManager.swift */; };
+		F5EEFA642BF37662004B457F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA562BF37662004B457F /* NetworkManager.swift */; };
 		F5EEFA652BF37662004B457F /* parseLoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA582BF37662004B457F /* parseLoginPage.swift */; };
 		F5EEFA662BF37662004B457F /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA592BF37662004B457F /* LoginPageView.swift */; };
+		F5EEFA672BF37662004B457F /* WebScraperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA5B2BF37662004B457F /* WebScraperViewModel.swift */; };
 		F5EEFA6A2BF376FC004B457F /* FourFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEFA692BF376FC004B457F /* FourFour.swift */; };
 		F5EEFA6D2BF37724004B457F /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = F5EEFA6C2BF37724004B457F /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F50AA1422BF625E900B70437 /* QuoteClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteClip.swift; sourceTree = "<group>"; };
-		F5322AA72BF7B98C00A02D2A /* StringEncodingGBK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEncodingGBK.swift; sourceTree = "<group>"; };
-		F5322AA92BF7B9CC00A02D2A /* DataNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNetWorkManager.swift; sourceTree = "<group>"; };
-		F5322AAB2BF7B9FA00A02D2A /* ThreadScraperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadScraperViewModel.swift; sourceTree = "<group>"; };
-		F5322AAD2BF7BA8000A02D2A /* PostScraperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScraperViewModel.swift; sourceTree = "<group>"; };
 		F558F6D92BF3B48400B1A9E7 /* PostAndReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAndReplyView.swift; sourceTree = "<group>"; };
 		F558F6DB2BF3BACD00B1A9E7 /* PostHTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHTMLParser.swift; sourceTree = "<group>"; };
 		F5EEFA3D2BF375EC004B457F /* FourFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,9 +35,10 @@
 		F5EEFA532BF37662004B457F /* ForumPage2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumPage2.swift; sourceTree = "<group>"; };
 		F5EEFA542BF37662004B457F /* HTMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		F5EEFA552BF37662004B457F /* ForumURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForumURLs.swift; path = FourFour/ForumURLs.swift; sourceTree = SOURCE_ROOT; };
-		F5EEFA562BF37662004B457F /* LoginNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginNetworkManager.swift; path = FourFour/LoginNetworkManager.swift; sourceTree = SOURCE_ROOT; };
+		F5EEFA562BF37662004B457F /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = FourFour/NetworkManager.swift; sourceTree = SOURCE_ROOT; };
 		F5EEFA582BF37662004B457F /* parseLoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parseLoginPage.swift; sourceTree = "<group>"; };
 		F5EEFA592BF37662004B457F /* LoginPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		F5EEFA5B2BF37662004B457F /* WebScraperViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebScraperViewModel.swift; path = FourFour/WebScraperViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F5EEFA692BF376FC004B457F /* FourFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourFour.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,11 +75,10 @@
 			children = (
 				F5EEFA692BF376FC004B457F /* FourFour.swift */,
 				F5EEFA552BF37662004B457F /* ForumURLs.swift */,
-				F5322AA72BF7B98C00A02D2A /* StringEncodingGBK.swift */,
-				F5EEFA562BF37662004B457F /* LoginNetworkManager.swift */,
-				F5322AA92BF7B9CC00A02D2A /* DataNetWorkManager.swift */,
-				F5EEFA572BF37662004B457F /* LoginPage */,
+				F5EEFA562BF37662004B457F /* NetworkManager.swift */,
+				F5EEFA5B2BF37662004B457F /* WebScraperViewModel.swift */,
 				F5EEFA4F2BF37662004B457F /* ThreadList */,
+				F5EEFA572BF37662004B457F /* LoginPage */,
 				F5EEFA5A2BF37662004B457F /* PostContent */,
 				F5EEFA442BF375ED004B457F /* Assets.xcassets */,
 				F5EEFA462BF375ED004B457F /* Preview Content */,
@@ -106,7 +97,6 @@
 		F5EEFA4F2BF37662004B457F /* ThreadList */ = {
 			isa = PBXGroup;
 			children = (
-				F5322AAB2BF7B9FA00A02D2A /* ThreadScraperViewModel.swift */,
 				F5EEFA542BF37662004B457F /* HTMLParser.swift */,
 				F5EEFA512BF37662004B457F /* GenericPostListView.swift */,
 				F5EEFA532BF37662004B457F /* ForumPage2.swift */,
@@ -129,8 +119,6 @@
 		F5EEFA5A2BF37662004B457F /* PostContent */ = {
 			isa = PBXGroup;
 			children = (
-				F50AA1422BF625E900B70437 /* QuoteClip.swift */,
-				F5322AAD2BF7BA8000A02D2A /* PostScraperViewModel.swift */,
 				F558F6DB2BF3BACD00B1A9E7 /* PostHTMLParser.swift */,
 				F558F6D92BF3B48400B1A9E7 /* PostAndReplyView.swift */,
 			);
@@ -214,11 +202,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5322AAE2BF7BA8000A02D2A /* PostScraperViewModel.swift in Sources */,
-				F5322AA82BF7B98C00A02D2A /* StringEncodingGBK.swift in Sources */,
-				F5EEFA642BF37662004B457F /* LoginNetworkManager.swift in Sources */,
+				F5EEFA642BF37662004B457F /* NetworkManager.swift in Sources */,
 				F5EEFA632BF37662004B457F /* ForumURLs.swift in Sources */,
-				F50AA1432BF625E900B70437 /* QuoteClip.swift in Sources */,
 				F5EEFA612BF37662004B457F /* ForumPage2.swift in Sources */,
 				F5EEFA652BF37662004B457F /* parseLoginPage.swift in Sources */,
 				F558F6DC2BF3BACD00B1A9E7 /* PostHTMLParser.swift in Sources */,
@@ -226,8 +211,7 @@
 				F558F6DA2BF3B48400B1A9E7 /* PostAndReplyView.swift in Sources */,
 				F5EEFA662BF37662004B457F /* LoginPageView.swift in Sources */,
 				F5EEFA5F2BF37662004B457F /* GenericPostListView.swift in Sources */,
-				F5322AAC2BF7B9FA00A02D2A /* ThreadScraperViewModel.swift in Sources */,
-				F5322AAA2BF7B9CC00A02D2A /* DataNetWorkManager.swift in Sources */,
+				F5EEFA672BF37662004B457F /* WebScraperViewModel.swift in Sources */,
 				F5EEFA6A2BF376FC004B457F /* FourFour.swift in Sources */,
 				F5EEFA5E2BF37662004B457F /* ForumListView.swift in Sources */,
 			);
@@ -371,7 +355,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,7 +385,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

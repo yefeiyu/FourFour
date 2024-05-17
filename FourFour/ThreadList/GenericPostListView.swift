@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct GenericPostListView: View {
-    @ObservedObject var scraperViewModel: WebScraperViewModel
+    @ObservedObject var scraperViewModel: ThreadScraperViewModel
 
     var body: some View {
         List(scraperViewModel.posts, id: \.self) { post in
